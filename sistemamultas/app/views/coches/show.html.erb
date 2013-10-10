@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Matricula:</strong>
+  <%= @coche.matricula %>
+</p>
+
+<p>
+  <strong>Usuario:</strong>
+  <%= link_to @coche.usuario.usuario, @coche.usuario %>
+</p>
+
+<%= link_to 'Edit', edit_coche_path(@coche) %> |
+<%= link_to 'Back', coches_path %>

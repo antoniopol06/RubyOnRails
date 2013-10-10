@@ -1,0 +1,29 @@
+<h1>Listing usuarios</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Usuario</th>
+      <th>N de coches</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @usuarios.each do |usuario| %>
+      <tr>
+        <td><%= usuario.usuario %></td>
+        <td><%= usuario.coches.count %></td>
+        <td><%= link_to 'Show', usuario %></td>
+        <td><%= link_to 'Edit', edit_usuario_path(usuario) %></td>
+        <td><%= link_to 'Destroy', usuario, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Usuario', new_usuario_path %>

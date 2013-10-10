@@ -1,0 +1,18 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Usuario:</strong>
+  <%= @usuario.usuario %>
+</p>
+<p>
+	<% if @usuario.coches.empty? %>
+		No hay coches registrados
+		<% else %>
+		<% @usuario.coches.each do |c| %>
+			Matrícula: <%= link_to c.matricula, c %>
+		<% end %>
+	<% end %>
+</p>
+
+<%= link_to 'Edit', edit_usuario_path(@usuario) %> |
+<%= link_to 'Back', usuarios_path %>

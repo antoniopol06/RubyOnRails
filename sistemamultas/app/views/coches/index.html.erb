@@ -1,0 +1,29 @@
+<h1>Listing coches</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Matricula</th>
+      <th>Usuario</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @coches.each do |coche| %>
+      <tr>
+        <td><%= coche.matricula %></td>
+        <td><%= coche.usuario.usuario %></td>
+        <td><%= link_to 'Show', coche %></td>
+        <td><%= link_to 'Edit', edit_coche_path(coche) %></td>
+        <td><%= link_to 'Destroy', coche, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Coche', new_coche_path %>
